@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌入網頁並重新載入</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        iframe {
+            width: 80%;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="embeddedPage" src="https://www.example.com"></iframe>
+    <button onclick="reloadIframe()">重新載入嵌入的網頁</button>
+
+    <script>
+        function reloadIframe() {
+            var iframe = document.getElementById('embeddedPage');
+            iframe.src = iframe.src;
+        }
+    </script>
+</body>
+</html>
+
