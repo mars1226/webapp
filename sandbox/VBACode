@@ -1,1 +1,19 @@
+' 建立數字到中文的字典
+Dim numberToChinese As New Dictionary(Of Integer, String) From {
+    {1, "一"},
+    {2, "二"},
+    {3, "三"},
+    {4, "四"},
+    {5, "五"},
+    {6, "六"},
+    {7, "日"}
+}
 
+' 輸入的數字
+Dim inputNumber As Integer = 5 ' 可以是1, 2, 3, 4, 5, 6, 7中的任意數字
+
+' 查詢字典並取得對應的中文
+Dim chineseDay As String = numberToChinese(inputNumber)
+
+' 輸出結果
+MsgBox("對應的中文是：" & chineseDay)
