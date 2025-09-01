@@ -1651,7 +1651,7 @@ input, select, textarea {
 				left: 2.1875em;
 				margin: 0;
 				position: absolute;
-				z-index: 1;
+				z-index: 0;
 			}
 
 			#main .thumb > p {
@@ -1674,7 +1674,7 @@ input, select, textarea {
 			top: 0;
 			visibility: hidden;
 			width: 100%;
-			z-index: 1;
+			z-index: 0;
 		}
 
 			body.ie #main:after {
