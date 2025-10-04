@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /* 新增樣式設定 */
+    #countdown {
+      text-align: center;
+      color: #FF0000; /* 紅色文字 */
+      font-size: 24px; /* 字體大小為24像素 */
+      margin-top: 50px; /* 距離上方50像素 */
+    }
+  </style>
+</head>
+<body>
+
+<!-- 顯示倒數計時的地方 -->
+<div id="countdown"></div>
+
+<!-- 嵌入 Google Form 的 iframe -->    
+<iframe src="https://docs.google.com/forms/d/1vIoEv3bLYugfS86MdUv__RzE-08XSEI8agOTWmof2Y0/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">載入中...</iframe>
+
+<script>
+// 設定倒數計時的秒數
+var countdownSeconds = 3600; // 30秒
+
+// 當網頁載入完成後執行
+document.addEventListener('DOMContentLoaded', function() {
+  // 啟動倒數計時
+  startCountdown();
+});
+
+function startCountdown() {
+  var countdownElement = document.getElementById('countdown');
+
+  // 設定初始時間
+  var timeLeft = countdownSeconds;
+
+  // 更新倒數計時的顯示
+  function updateCountdown() {
+    var minutes = Math.floor(timeLeft / 60);
+    var seconds = timeLeft % 60;
+
+    countdownElement.innerHTML = '倒數計時：' + minutes + '分 ' + seconds + '秒';
+
+    // 每秒減少一秒
+    timeLeft--;
+
+    // 如果時間到，彈出提示
+    if (timeLeft < 0) {
+      alert('時間到，請提交試卷！');
+      clearInterval(countdownInterval); // 停止倒數計時
+    }
+  }
+
+  // 每秒更新一次倒數計時
+  var countdownInterval = setInterval(updateCountdown, 1000);
+}
+</script>
+
+</body>
+</html>
